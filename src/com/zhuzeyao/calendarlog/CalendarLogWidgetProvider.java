@@ -110,11 +110,16 @@ public class CalendarLogWidgetProvider extends AppWidgetProvider {
 		}
 		
 		RemoteViews views = new RemoteViews(context.getPackageName(),R.layout.cal);
-		views.setTextViewText(R.id.textView1, str+"\n÷‹"+str2); 
+		views.setTextViewText(R.id.textView1, str); 
+		
+		RemoteViews views0 = new RemoteViews(context.getPackageName(),R.layout.cal);
+		views0.setTextViewText(R.id.textView3, "÷‹"+str2); 
+		
 		RemoteViews views1 = new RemoteViews(context.getPackageName(),R.layout.cal);
 		views1.setTextViewText(R.id.textView2, str1);  
 		
         appWidgetManager.updateAppWidget(appid, views); 
+        appWidgetManager.updateAppWidget(appid, views0); 
         appWidgetManager.updateAppWidget(appid, views1); 
     }  
     public class TimeBroadcastReceiver extends BroadcastReceiver{
