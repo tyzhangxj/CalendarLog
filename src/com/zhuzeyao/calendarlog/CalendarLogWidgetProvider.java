@@ -141,7 +141,7 @@ public class CalendarLogWidgetProvider extends AppWidgetProvider {
 	}
 
 	private static PendingIntent getPendingIntent(Context context) {
-		context.startService(EXAMPLE_SERVICE_INTENT);
+		
 		Intent intent = new Intent();
 		intent.setClass(context, CalendarLogActivity.class);
 		PendingIntent pi = PendingIntent.getActivity(context, 0, intent, 0);
