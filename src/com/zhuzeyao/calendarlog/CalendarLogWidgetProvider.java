@@ -1,6 +1,7 @@
 package com.zhuzeyao.calendarlog;
  
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date; 
  
 
@@ -75,17 +76,44 @@ public class CalendarLogWidgetProvider extends AppWidgetProvider {
   
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,  
             int appWidgetId, String titlePrefix) {
-		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
 		SimpleDateFormat formatter1 = new SimpleDateFormat("M月dd日");
-		Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
-		Date curDate1 = new Date(System.currentTimeMillis());// 获取当前时间
+		Date curDate1 = new Date(System.currentTimeMillis());// 获取当前日期
 		String str = formatter1.format(curDate1);
-
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+		Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
 		String str1 = formatter.format(curDate);
+		
+		String str2 = null;
+		switch(Calendar.getInstance().get(Calendar.DAY_OF_WEEK)){
+		case 1:
+			str2 = "日";
+			break;
+		case 2:
+			str2 = "一";
+			break;
+		case 3:
+			str2 = "二";
+			break;
+		case 4:
+			str2 = "三";
+			break;
+		case 5:
+			str2 = "四";
+			break;
+		case 6:
+			str2 = "五";
+			break;
+		case 7:
+			str2 = "六";
+			break;
+		}
+		
 		RemoteViews views = new RemoteViews(context.getPackageName(),R.layout.cal);
-		views.setTextViewText(R.id.textView1, str); 
+		views.setTextViewText(R.id.textView1, str+"\n周"+str2); 
 		RemoteViews views1 = new RemoteViews(context.getPackageName(),R.layout.cal);
 		views1.setTextViewText(R.id.textView2, str1);  
+		
         appWidgetManager.updateAppWidget(appid, views); 
         appWidgetManager.updateAppWidget(appid, views1); 
     }  
