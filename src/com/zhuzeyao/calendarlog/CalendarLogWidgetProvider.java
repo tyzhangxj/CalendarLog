@@ -79,11 +79,15 @@ public class CalendarLogWidgetProvider extends AppWidgetProvider {
 		SimpleDateFormat formatter1 = new SimpleDateFormat("M月dd日");
 		Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
 		Date curDate1 = new Date(System.currentTimeMillis());// 获取当前时间
-		String str = formatter1.format(curDate1)+"\n"+formatter.format(curDate);
+		String str = formatter1.format(curDate1);
+
+		String str1 = formatter.format(curDate);
 		RemoteViews views = new RemoteViews(context.getPackageName(),R.layout.cal);
 		views.setTextViewText(R.id.textView1, str); 
-        // Tell the widget manager  
+		RemoteViews views1 = new RemoteViews(context.getPackageName(),R.layout.cal);
+		views1.setTextViewText(R.id.textView2, str1);  
         appWidgetManager.updateAppWidget(appid, views); 
+        appWidgetManager.updateAppWidget(appid, views1); 
     }  
     public class TimeBroadcastReceiver extends BroadcastReceiver{
 
