@@ -18,28 +18,25 @@
         <TextView
             android:id="@+id/textView1"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
+            android:layout_height="fill_parent" 
             android:layout_gravity="center_vertical"
             android:background="#bb0000"
-            android:gravity="center"
+            android:gravity="bottom|center"
             android:text="TextView"
             android:textColor="#ffffff" />
          <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textView3"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="2"
+            android:layout_height="fill_parent" 
             android:layout_gravity="center_vertical"
             android:background="#bb0000"
             android:gravity="center"
             android:text="TextView"
-            android:textSize="12dp"
+            android:textSize="10dp"
             android:textColor="#ffffff" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/textView2"
+    <LinearLayout 
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_gravity="center_vertical"
