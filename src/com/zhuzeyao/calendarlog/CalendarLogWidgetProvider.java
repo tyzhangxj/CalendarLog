@@ -76,11 +76,12 @@ public class CalendarLogWidgetProvider extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,  
             int appWidgetId, String titlePrefix) {
 		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+		SimpleDateFormat formatter1 = new SimpleDateFormat("M月dd日");
 		Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
-		String str = formatter.format(curDate);
+		Date curDate1 = new Date(System.currentTimeMillis());// 获取当前时间
+		String str = formatter1.format(curDate1)+"\n"+formatter.format(curDate);
 		RemoteViews views = new RemoteViews(context.getPackageName(),R.layout.cal);
-		views.setTextViewText(R.id.textView1, str);
-  
+		views.setTextViewText(R.id.textView1, str); 
         // Tell the widget manager  
         appWidgetManager.updateAppWidget(appid, views); 
     }  
