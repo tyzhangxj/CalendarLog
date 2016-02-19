@@ -29,6 +29,13 @@
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
         </receiver>
+        <service
+            android:enabled="true"
+            android:name=".CalendarLogService" >
+            <intent-filter >
+                <action android:name="android.appwidget.action.EXAMPLE_APP_WIDGET_SERVICE" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
